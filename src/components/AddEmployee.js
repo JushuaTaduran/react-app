@@ -15,7 +15,7 @@ function AddEmployee(props) {
     <>
       <button
         onClick={handleShow}
-        className="block mx-auto m-2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+        className="block px-4 py-2 mx-auto font-bold text-white bg-purple-500 rounded shadow hover:bg-purple-400 focus:shadow-outline focus:outline-none"
       >
         + Add Card
       </button>
@@ -41,10 +41,10 @@ function AddEmployee(props) {
             id="edit-modal"
             className="w-full max-w-sm"
           >
-            <div className="md:flex md:items-center mb-6">
+            <div className="mb-6 md:flex md:items-center">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0"
                   for="name"
                 >
                   Name
@@ -52,7 +52,7 @@ function AddEmployee(props) {
               </div>
               <div className="md:w-2/3">
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-purple-500"
                   id="name"
                   placeholder="Your name here"
                   type="text"
@@ -63,10 +63,10 @@ function AddEmployee(props) {
                 />
               </div>
             </div>
-            <div className="md:flex md:items-center mb-6">
+            <div className="mb-6 md:flex md:items-center">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0"
                   for="title"
                 >
                   Title
@@ -74,7 +74,7 @@ function AddEmployee(props) {
               </div>
               <div className="md:w-2/3">
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-purple-500"
                   id="title"
                   placeholder="Your title here"
                   type="text"
@@ -85,10 +85,10 @@ function AddEmployee(props) {
                 />
               </div>
             </div>
-            <div className="md:flex md:items-center mb-6">
+            <div className="mb-6 md:flex md:items-center">
               <div className="md:w-1/3">
                 <label
-                  className="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4"
+                  className="block pr-4 mb-1 font-bold text-gray-500 md:text-right md:mb-0"
                   for="img"
                 >
                   Image URL
@@ -96,7 +96,7 @@ function AddEmployee(props) {
               </div>
               <div className="md:w-2/3">
                 <input
-                  className="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                  className="w-full px-3 py-2 leading-tight text-gray-700 bg-gray-200 border-2 border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-purple-500"
                   id="img"
                   placeholder="https://www.google.com/"
                   type="text"
@@ -111,13 +111,13 @@ function AddEmployee(props) {
         </Modal.Body>
         <Modal.Footer>
           <button
-            className="shadow bg-gray-400 hover:bg-black focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="px-4 py-2 font-bold text-white bg-gray-400 rounded shadow hover:bg-black focus:shadow-outline focus:outline-none"
             onClick={handleClose}
           >
             Close
           </button>
           <button
-            className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+            className="px-4 py-2 font-bold text-white bg-purple-500 rounded shadow hover:bg-purple-400 focus:shadow-outline focus:outline-none"
             form="edit-modal"
             onClick={handleClose}
           >
