@@ -1,7 +1,10 @@
 import "./index.css";
 import Employee from "./components/Employee";
 import { useState } from "react";
-import { v4 as uuiidv4 } from "uuid";
+import AddEmployee from "./components/AddEmployee";
+import EditEmployee from "./components/EditEmployee";
+import Header from "./components/Header";
+import { v4 as uuidv4 } from "uuid";
 
 function App() {
   const [employees, setEmployees] = useState([
@@ -45,7 +48,7 @@ function App() {
 
   function updateEmployee(id, newName, newTitle) {
     const updatedEmployees = employees.map((employee) => {
-      if (id == employee.id) {
+      if (id === employee.id) {
         return { ...employee, name: newName, title: newTitle };
       }
 
@@ -54,14 +57,33 @@ function App() {
     setEmployees(updatedEmployees);
   }
 
+  function newEmployee(name, title, img) {
+    const newEmployee = {
+      id: uuidv4(),
+      name: name,
+      title: title,
+      img: img,
+    };
+    setEmployees([...employees, newEmployee]);
+  }
+
   const showEmployees = true;
   return (
-    <div className="App">
+    <div className="App bg-gray-700 min-h-screen max-h-screen">
       <>
+        <Header />
         {showEmployees ? (
           <>
             <div className="flex flex-wrap justify-center">
               {employees.map((employee) => {
+                const editEmployee = (
+                  <EditEmployee
+                    id={employee.id}
+                    name={employee.name}
+                    title={employee.title}
+                    updateEmployee={updateEmployee}
+                  />
+                );
                 return (
                   <Employee
                     key={employee.id}
@@ -69,11 +91,12 @@ function App() {
                     name={employee.name}
                     title={employee.title}
                     img={employee.img}
-                    updateEmployee={updateEmployee}
+                    editEmployee={editEmployee}
                   />
                 );
               })}
             </div>
+            <AddEmployee newEmployee={newEmployee} />
           </>
         ) : (
           <p>You cannot see the employees</p>
