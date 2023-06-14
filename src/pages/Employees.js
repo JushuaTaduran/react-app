@@ -69,7 +69,7 @@ function Employees() {
 
   const showEmployees = true;
   return (
-    <div className="max-h-full min-h-screen pb-4 bg-gray-700 App">
+    <div>
       <>
         {showEmployees ? (
           <>
